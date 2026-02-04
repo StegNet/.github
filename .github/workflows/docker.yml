@@ -84,6 +84,9 @@ jobs:
           build-args: |
             VERSION=${{ github.ref_type == 'tag' && steps.meta.outputs.version || github.sha }}
             COMMIT_SHA=${{ github.sha }}
+            NEXT_PUBLIC_APP_URL=${{ vars.NEXT_PUBLIC_DISCORD_CLIENT_ID }}
+            NEXT_PUBLIC_DISCORD_CLIENT_ID=${{ vars.NEXT_PUBLIC_DISCORD_CLIENT_ID }}
+            NEXT_PUBLIC_SENTRY_DSN=${{ vars.NEXT_PUBLIC_SENTRY_DSN }}
           secrets: |
             SHA=${{ github.sha }}
             SENTRY_AUTH_TOKEN=${{ secrets.SENTRY_AUTH_TOKEN }}
